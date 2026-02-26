@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "tapanshikari/rest-api"
+        IMAGE_NAME = "tapanaws155/rest-api"
         IMAGE_TAG = "v1"
     }
 
