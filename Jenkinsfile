@@ -15,11 +15,17 @@ pipeline {
                 bat 'mvn clean package -DskipTests'
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t rest-api:v1 .'
+            }
+        }
     }
 
     post {
         success {
-            echo 'BUILD SUCCESS ✅ Maven build completed'
+            echo 'BUILD SUCCESS ✅ Maven + Docker build completed'
         }
         failure {
             echo 'BUILD FAILED ❌'
